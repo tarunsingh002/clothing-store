@@ -1,0 +1,33 @@
+<div class="flex overflow-hidden">
+  <div
+    [ngStyle]="{transform: 'translateX(' + j + '%)'}"
+    class="carousel_item flex shrink-0 w-full"
+    *ngFor="let slide of slides; let i = index"
+  >
+    <div class="basis-2/12 h-full">
+      <a [routerLink]="['/products', slide.path]">
+        <img class="h-1/2 w-full" [src]="slide.images[0]" />
+      </a>
+      <a [routerLink]="['/products', slide.path]">
+        <img class="h-1/2 w-full" [src]="slide.images[1]" />
+      </a>
+    </div>
+    <div class="basis-8/12 h-full">
+      <a [routerLink]="['/products', slide.path]">
+        <img
+          class="h-full w-full"
+          [ngStyle]="{'object-position': 'center'}"
+          [src]="slide.images[2]"
+        />
+      </a>
+    </div>
+    <div class="basis-2/12 h-full">
+      <a [routerLink]="['/products', slide.path]">
+        <img class="h-1/2 w-full" [src]="slide.images[3]" />
+      </a>
+      <a [routerLink]="['/products', slide.path]">
+        <img class="h-1/2 w-full" [src]="slide.images[4]" />
+      </a>
+    </div>
+  </div>
+</div>

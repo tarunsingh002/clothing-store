@@ -1,0 +1,96 @@
+<!-- navbar -->
+<div class="fixed top-0 z-50 left-0 right-0">
+  <div class="bg-[#68f0ae] text-gray-800 flex h-16 items-center justify-between px-5 lg:px-20">
+    <div class="flex items-center space-x-5">
+      <div class="flex items-center space-x-3">
+        <img class="icon" src="../../assets/shirt-solid.svg" alt="" />
+        <a routerLink="/" class="text-gray-800">The Clothing Store</a>
+      </div>
+
+      <div class="hidden lg:flex items-center space-x-4">
+        <button #openButton class="open-button" (click)="openNavBarContent('men')" mat-button>
+          Men
+        </button>
+        <button #openButton class="open-button" (click)="openNavBarContent('women')" mat-button>
+          Women
+        </button>
+      </div>
+    </div>
+
+    <div class="hidden lg:flex items-center space-x-5">
+      <button (click)="navigateToCart()" mat-icon-button><mat-icon>shopping_cart</mat-icon></button>
+      <button *ngIf="!auth" mat-raised-button color="accent">Login</button>
+
+      <span *ngIf="auth" class="font-bold text-lg">Tarun Singh</span>
+      <button *ngIf="auth" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Orders</button>
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>Logout</button>
+      </mat-menu>
+    </div>
+
+    <button *ngIf="!showExtendedMenu" (click)="toggleMenu()" class="p-2 lg:!hidden" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button *ngIf="showExtendedMenu" (click)="toggleMenu()" mat-icon-button class="lg:!hidden">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <!-- Extended Menu  -->
+  <div
+    *ngIf="showExtendedMenu"
+    class="z-10 bg-[#68f0ae] lg:hidden text-gray-800 space-y-2 flex flex-col items-start"
+  >
+    <button #openButton class="open-button ml-4" (click)="openNavBarContent('men')" mat-button>
+      Men
+    </button>
+    <button #openButton class="open-button ml-4" (click)="openNavBarContent('women')" mat-button>
+      Women
+    </button>
+
+    <div class="flex items-center space-x-5 !my-3">
+      <button (click)="navigateToCart()" mat-icon-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button *ngIf="!auth" mat-raised-button color="accent">Login</button>
+
+      <span *ngIf="auth" class="font-bold text-lg">Tarun Singh</span>
+      <button *ngIf="auth" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Orders</button>
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>Logout</button>
+      </mat-menu>
+    </div>
+  </div>
+  <!-- navcontent -->
+
+  <div *ngIf="isNavbarContentOpen" class="w-full">
+    <div class="bg-gray-950 text-white w-full h-1/2 shadow-lg p-6">
+      <div class="flex justify-around">
+        <div class="flex flex-col" *ngFor="let item of category[selectedSection].sections">
+          <h1 class="text-white" class="text-center">{{ item.name }}</h1>
+          <button mat-button *ngFor="let section of item.items">{{ section.name }}</button>
+        </div>
+        <div class="hidden lg:block">
+          <div class="mb-5">
+            <img class="w-[19rem] h-[20rem] object-cover object-top rounded-md" src="" alt="" />
+          </div>
+          <p class="text-gray-600">New Arrival</p>
+        </div>
+        <div class="hidden lg:block">
+          <div class="mb-5">
+            <img class="w-[19rem] h-[20rem] object-cover object-top rounded-md" src="" alt="" />
+          </div>
+          <p class="text-gray-600">New Arrival</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

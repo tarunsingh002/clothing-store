@@ -1,0 +1,9 @@
+<div class="p-5 lg:px-20 lg:py-10">
+  <p class="font-semibold text-2xl opacity-75 py-5">{{ title }}</p>
+  <div class="flex flex-wrap justify-center">
+    <app-front-page-product-card
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-front-page-product-card>
+  </div>
+</div>

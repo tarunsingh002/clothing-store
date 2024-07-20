@@ -1,0 +1,7 @@
+<app-carousel> </app-carousel>
+
+<app-front-page-product-slider
+  *ngFor="let item of frontPageData; let i = index"
+  [title]="item.title"
+  [products]="item.products"
+></app-front-page-product-slider>

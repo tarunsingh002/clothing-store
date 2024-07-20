@@ -1,0 +1,9 @@
+.carousel_item {
+  aspect-ratio: 2.6;
+  transition: all 0.5s linear;
+}
+
+img {
+  object-fit: cover;
+  object-position: top;
+}
