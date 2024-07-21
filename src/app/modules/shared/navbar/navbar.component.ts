@@ -1,6 +1,7 @@
 import {Component, HostListener, QueryList, ViewChildren} from '@angular/core';
-import {navData} from '../../data/nav-content';
+// import {navData} from '../../data/nav-content';
 import {MatButton} from '@angular/material/button';
+import {navData} from '../../../../data/nav-content';
 
 @Component({
   selector: 'app-navbar',

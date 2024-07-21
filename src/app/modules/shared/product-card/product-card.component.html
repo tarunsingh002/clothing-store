@@ -1,0 +1,19 @@
+<div class="productCard w-[17rem] m-3 transition-all cursor-pointer">
+  <div class="h-[20rem]">
+    <img class="h-full w-full" [src]="product.imageUrl" alt="" />
+  </div>
+  <div class="textPart p-3 mat-app-background">
+    <div>
+      <p class="opacity-80">{{ product.brand }}</p>
+      <p>{{ product.title }}</p>
+      <p class="text-gray-600">{{ product.color }}</p>
+    </div>
+    <div class="flex space-x-2 items-center">
+      <p class="font-bold">Rs.{{ product.discountedPrice }}</p>
+      <p class="text-gray-600 line-through">Rs.{{ product.price }}</p>
+      <p>
+        {{ ((product.price - product.discountedPrice) / product.price) * 100 | number : '1.2-2' }}%
+      </p>
+    </div>
+  </div>
+</div>

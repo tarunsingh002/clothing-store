@@ -1,0 +1,73 @@
+<div class="flex flex-col items-center w-full">
+  <main class="py-10 px-4 sm:px-6 max-w-[1281px] pb-10">
+    <div class="flex justify-between border-gray-200 pb-6 pt-24">
+      <h1 class="text-4xl font-bold text-white">Products</h1>
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu">Sort</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Price: High to Low</button>
+          <button mat-menu-item>Price: Low to High</button>
+        </mat-menu>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <section class="pt-6">
+      <div class="grid grid-cols-1 gap-8 gap-y-10 lg:grid-cols-4">
+        <div class="lg:col-span-1 hidden lg:block">
+          <div class="flex items-center justify-between">
+            <p class="text-lg">Filters</p>
+            <mat-icon>filter_list</mat-icon>
+          </div>
+          <div class="py-6" *ngFor="let item of FilterData; let i = index">
+            <form [formGroup]="formGroupArray[i]">
+              <span class="font-medium">{{ item.name }}</span>
+              <div class="scroll-py-4 pt-6" id="filter-section-0">
+                <mat-checkbox
+                  class="!block"
+                  *ngFor="let option of item.options"
+                  [formControlName]="option.value"
+                  ><span class="text-sm text-gray-500">
+                    {{ option.label }}
+                  </span>
+                </mat-checkbox>
+              </div>
+            </form>
+            <mat-divider></mat-divider>
+          </div>
+          <form [formGroup]="singleFilterForm">
+            <div class="py-6" *ngFor="let item of singleFilterData; let i = index; let last = last">
+              <span class="font-medium">{{ item.name }}</span>
+              <mat-radio-group
+                class="pt-6 scroll-py-4"
+                id="filter-section-0"
+                [formControlName]="item.filter"
+              >
+                <mat-radio-button class="block" value="all"
+                  ><span class="text-sm text-gray-500"> All </span>
+                </mat-radio-button>
+                <mat-radio-button
+                  class="block"
+                  [value]="option.value"
+                  *ngFor="let option of item.options"
+                  ><span class="text-sm text-gray-500">
+                    {{ option.label }}
+                  </span>
+                </mat-radio-button>
+              </mat-radio-group>
+              <mat-divider *ngIf="!last"></mat-divider>
+            </div>
+          </form>
+        </div>
+        <div class="lg:col-span-3">
+          <div class="flex flex-wrap justify-evenly">
+            <app-product-card
+              *ngFor="let item of productsPageData"
+              [product]="item"
+            ></app-product-card>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

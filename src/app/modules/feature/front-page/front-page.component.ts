@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {data} from '../../data/FrontPageData';
+import {data} from '../../../../data/FrontPageData';
 
 @Component({
   selector: 'app-front-page',
