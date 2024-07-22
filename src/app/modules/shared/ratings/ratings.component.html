@@ -1,0 +1,8 @@
+<span
+  class="thumbsup"
+  (click)="rate(thumbsup)"
+  *ngFor="let thumbsup of thumbsUps"
+  [ngClass]="{active: thumbsup <= currentRating}"
+>
+  <mat-icon>{{ thumbsup <= currentRating ? 'thumb_up_alt' : 'thumb_up_off_alt' }}</mat-icon>
+</span>

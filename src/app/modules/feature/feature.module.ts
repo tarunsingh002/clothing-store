@@ -11,9 +11,18 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import {SharedModule} from '../shared/shared.module';
+import {CartComponent} from './cart/cart.component';
+import {ProductDetailsComponent} from './product-details/product-details.component';
+import {CheckoutComponent} from './checkout/checkout.component';
+import {PaymentComponent} from './payment/payment.component';
+import {PaymentSuccessComponent} from './payment-success/payment-success.component';
+import {OrderComponent} from './order/order.component';
+import {OrderDetailsComponent} from './order-details/order-details.component';
+import {ProductReviewComponent} from './product-review/product-review.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 @NgModule({
   declarations: [
     CarouselComponent,
@@ -21,6 +30,14 @@ import {SharedModule} from '../shared/shared.module';
     FrontPageProductCardComponent,
     FrontPageProductSliderComponent,
     ProductsComponent,
+    CartComponent,
+    ProductDetailsComponent,
+    CheckoutComponent,
+    PaymentComponent,
+    PaymentSuccessComponent,
+    OrderComponent,
+    OrderDetailsComponent,
+    ProductReviewComponent,
   ],
   imports: [
     CommonModule,
@@ -33,7 +50,9 @@ import {SharedModule} from '../shared/shared.module';
     ReactiveFormsModule,
     MatRadioModule,
     SharedModule,
+    FormsModule,
+    MatProgressBarModule,
   ],
-  exports: [FrontPageComponent, ProductsComponent],
+  exports: [],
 })
 export class FeatureModule {}
