@@ -23,6 +23,9 @@ import {OrderComponent} from './order/order.component';
 import {OrderDetailsComponent} from './order-details/order-details.component';
 import {ProductReviewComponent} from './product-review/product-review.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     CarouselComponent,
@@ -52,6 +55,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     SharedModule,
     FormsModule,
     MatProgressBarModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   exports: [],
 })

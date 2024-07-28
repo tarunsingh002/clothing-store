@@ -8,10 +8,26 @@ import {MatButtonModule} from '@angular/material/button';
 import {ProductCardComponent} from './product-card/product-card.component';
 import {RatingsComponent} from './ratings/ratings.component';
 import {RouterModule} from '@angular/router';
+import {CartItemComponent} from './cart-item/cart-item.component';
+import {AddressCardComponent} from './address-card/address-card.component';
 
 @NgModule({
-  declarations: [FooterComponent, NavbarComponent, ProductCardComponent, RatingsComponent],
+  declarations: [
+    FooterComponent,
+    NavbarComponent,
+    ProductCardComponent,
+    RatingsComponent,
+    CartItemComponent,
+    AddressCardComponent,
+  ],
   imports: [CommonModule, MatButtonModule, MatIconModule, MatMenuModule, RouterModule],
-  exports: [FooterComponent, NavbarComponent, ProductCardComponent, RatingsComponent],
+  exports: [
+    FooterComponent,
+    NavbarComponent,
+    ProductCardComponent,
+    RatingsComponent,
+    CartItemComponent,
+    AddressCardComponent,
+  ],
 })
 export class SharedModule {}
