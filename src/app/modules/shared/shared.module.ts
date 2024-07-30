@@ -10,6 +10,8 @@ import {RatingsComponent} from './ratings/ratings.component';
 import {RouterModule} from '@angular/router';
 import {CartItemComponent} from './cart-item/cart-item.component';
 import {AddressCardComponent} from './address-card/address-card.component';
+import {OrderTrackerComponent} from './order-tracker/order-tracker.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,16 @@ import {AddressCardComponent} from './address-card/address-card.component';
     RatingsComponent,
     CartItemComponent,
     AddressCardComponent,
+    OrderTrackerComponent,
   ],
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatMenuModule, RouterModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    RouterModule,
+    MatDividerModule,
+  ],
   exports: [
     FooterComponent,
     NavbarComponent,
@@ -28,6 +38,7 @@ import {AddressCardComponent} from './address-card/address-card.component';
     RatingsComponent,
     CartItemComponent,
     AddressCardComponent,
+    OrderTrackerComponent,
   ],
 })
 export class SharedModule {}

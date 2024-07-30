@@ -40,7 +40,7 @@ const routes: Routes = [
     component: PaymentSuccessComponent,
   },
   {
-    path: 'account/order',
+    path: 'account/orders',
     component: OrderComponent,
   },
   {

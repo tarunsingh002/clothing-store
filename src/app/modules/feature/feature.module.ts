@@ -25,6 +25,7 @@ import {ProductReviewComponent} from './product-review/product-review.component'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { OrderCardComponent } from './order-card/order-card.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     OrderComponent,
     OrderDetailsComponent,
     ProductReviewComponent,
+    OrderCardComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-cart-item',
@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   styleUrl: './cart-item.component.scss',
 })
 export class CartItemComponent {
+  @Input() showButtons: boolean;
   removeCartItem() {}
   updateCartItem(num: number) {}
 }
